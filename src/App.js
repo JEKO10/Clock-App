@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Main from "./components/Main";
 
 function App() {
+  const [location, setLocation] = useState("");
+
+  const fetchLocation = async () => {
+    const response = await fetch(
+      "https://api.freegeoip.app/json/?apikey=53323ee0-9275-11ec-b15e-6d27cf6ad4a4"
+    );
+    const data = await response.json();
+    setLocation(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    fetchLocation();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Main />
+    </>
   );
 }
 
