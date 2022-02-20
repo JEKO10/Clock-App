@@ -19,14 +19,13 @@ function App() {
     );
     const data = await response.json();
     setTimezone(data);
+    console.log(data);
   };
 
   useEffect(() => {
     fetchLocation();
     fetchTimezone();
-    console.log(location);
-    console.log(timezone);
-  }, []);
+  }, [location]);
 
   return (
     <>
