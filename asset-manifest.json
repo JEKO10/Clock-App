@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Clock-App/static/css/main.f45dae1d.css",
-    "main.js": "/Clock-App/static/js/main.3a8cd50e.js",
+    "main.css": "/Clock-App/static/css/main.a2230077.css",
+    "main.js": "/Clock-App/static/js/main.9b498dff.js",
     "static/js/787.efa701b3.chunk.js": "/Clock-App/static/js/787.efa701b3.chunk.js",
     "static/media/bg-nighttime.jpg": "/Clock-App/static/media/bg-nighttime.084329e7ef247f1a2d2a.jpg",
     "static/media/bg-daytime.jpg": "/Clock-App/static/media/bg-daytime.22955f116d799eadf917.jpg",
     "index.html": "/Clock-App/index.html",
-    "main.f45dae1d.css.map": "/Clock-App/static/css/main.f45dae1d.css.map",
-    "main.3a8cd50e.js.map": "/Clock-App/static/js/main.3a8cd50e.js.map",
+    "main.a2230077.css.map": "/Clock-App/static/css/main.a2230077.css.map",
+    "main.9b498dff.js.map": "/Clock-App/static/js/main.9b498dff.js.map",
     "787.efa701b3.chunk.js.map": "/Clock-App/static/js/787.efa701b3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f45dae1d.css",
-    "static/js/main.3a8cd50e.js"
+    "static/css/main.a2230077.css",
+    "static/js/main.9b498dff.js"
   ]
 }
