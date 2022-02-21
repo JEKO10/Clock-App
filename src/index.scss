@@ -10,6 +10,7 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #000;
   color: #fff;
+  overflow-y: hidden;
 }
 
 .main {
@@ -69,7 +70,13 @@ body {
     cursor: pointer;
 
     svg {
-      transform: rotate(180deg);
+      &.down {
+        transform: rotate(180deg);
+      }
+
+      &.up {
+        transform: rotate(0deg);
+      }
     }
   }
 }

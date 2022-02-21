@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 
 function Main({ location }) {
   const [time, setTime] = useState("");
+  const [isScrolled, setIsScrolled] = useState(true);
+  let top;
+
+  if (isScrolled) {
+    top = document.body.offsetHeight;
+  } else {
+    top = 0;
+  }
 
   useEffect(() => {
     setInterval(() => {
@@ -9,6 +17,14 @@ function Main({ location }) {
       setTime(date.toLocaleTimeString().replace(/(.*)\D\d+/, "$1"));
     }, 1000);
   });
+
+  const handleScroll = () => {
+    window.scroll({
+      top: top,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section
@@ -52,9 +68,19 @@ function Main({ location }) {
         <h1>{time}</h1>
         <h3>In {location}</h3>
       </div>
-      <button>
-        More{" "}
-        <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <button
+        onClick={() => {
+          handleScroll();
+          setIsScrolled(!isScrolled);
+        }}
+      >
+        {isScrolled ? "More" : "Less"}
+        <svg
+          width="40"
+          height="40"
+          xmlns="http://www.w3.org/2000/svg"
+          className={isScrolled ? "down" : "up"}
+        >
           <g fill="none" fillRule="evenodd">
             <circle fill="#303030" cx="20" cy="20" r="20" />
             <path stroke="#FFF" strokeWidth="2" d="M14 23l6-6 6 6" />
