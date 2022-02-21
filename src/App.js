@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Main from "./components/Main";
 import MoreInfo from "./components/MoreInfo";
+import Quotes from "./components/Quotes";
 
 function App() {
   const [location, setLocation] = useState("");
@@ -16,11 +17,10 @@ function App() {
 
   const fetchTimezone = async () => {
     const response = await fetch(
-      `http://worldtimeapi.org/api/timezone/${location}`
+      `https://worldtimeapi.org/api/timezone/${location}`
     );
     const data = await response.json();
     setTimezone(data);
-    console.log(data);
   };
 
   useEffect(() => {
@@ -30,6 +30,7 @@ function App() {
 
   return (
     <>
+      <Quotes />
       <Main location={location} />
       <MoreInfo timezone={timezone} />
     </>
