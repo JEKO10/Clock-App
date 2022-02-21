@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Main from "./components/Main";
+import MoreInfo from "./components/MoreInfo";
 
 function App() {
   const [location, setLocation] = useState("");
@@ -29,7 +30,8 @@ function App() {
 
   return (
     <>
-      <Main />
+      <Main location={location} />
+      <MoreInfo timezone={timezone} />
     </>
   );
 }

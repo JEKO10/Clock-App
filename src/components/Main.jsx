@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Main() {
+function Main({ location }) {
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -50,6 +50,7 @@ function Main() {
           , It`s currently
         </h2>
         <h1>{time}</h1>
+        <h3>In {location}</h3>
       </div>
       <button>
         More{" "}
