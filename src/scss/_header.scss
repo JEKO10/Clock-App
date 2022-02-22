@@ -1,0 +1,19 @@
+header {
+  padding: 60px 26px;
+  height: 100vh;
+  width: 100%;
+
+  > section {
+    height: 50%;
+  }
+
+  &.night {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../images/bg-nighttime.jpg") center/cover no-repeat;
+  }
+
+  &.day {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../images/bg-daytime.jpg") center/cover no-repeat;
+  }
+}

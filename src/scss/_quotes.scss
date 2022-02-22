@@ -1,0 +1,25 @@
+.quotes {
+  @include maxWidth;
+
+  > div {
+    @include flex(flex-start, center);
+
+    p {
+      font-size: 1.3rem;
+      max-width: 500px;
+      text-shadow: 0 4px 4px #000;
+      margin-right: 2rem;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    text-shadow: 0 4px 4px #000;
+  }
+}
