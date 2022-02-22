@@ -6,6 +6,7 @@ import Quotes from "./components/Quotes";
 function App() {
   const [location, setLocation] = useState("");
   const [timezone, setTimezone] = useState([]);
+  const [time, setTime] = useState("");
 
   const fetchLocation = async () => {
     const response = await fetch(
@@ -21,17 +22,30 @@ function App() {
     );
     const data = await response.json();
     setTimezone(data);
+    console.log(data);
   };
 
   useEffect(() => {
     fetchLocation();
     fetchTimezone();
+    setInterval(() => {
+      const date = new Date();
+      setTime(date.toLocaleTimeString().replace(/(.*)\D\d+/, "$1"));
+    }, 1000);
   }, [location]);
 
   return (
     <>
-      <Quotes />
-      <Main location={location} />
+      <header
+        className={
+          time.substring(0, 2) < 6 || time.substring(0, 2) >= 18
+            ? "night"
+            : "day"
+        }
+      >
+        <Quotes />
+        <Main location={location} time={time} timezone={timezone} />
+      </header>
       <MoreInfo timezone={timezone} />
     </>
   );

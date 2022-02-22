@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function Main({ location }) {
-  const [time, setTime] = useState("");
+function Main({ timezone, location, time }) {
   const [isScrolled, setIsScrolled] = useState(true);
   let top;
 
@@ -10,13 +9,6 @@ function Main({ location }) {
   } else {
     top = 0;
   }
-
-  useEffect(() => {
-    setInterval(() => {
-      const date = new Date();
-      setTime(date.toLocaleTimeString().replace(/(.*)\D\d+/, "$1"));
-    }, 1000);
-  });
 
   const handleScroll = () => {
     window.scroll({
@@ -27,13 +19,7 @@ function Main({ location }) {
   };
 
   return (
-    <section
-      className={
-        time.substring(0, 2) < 6 || time.substring(0, 2) >= 18
-          ? "night main"
-          : "day main"
-      }
-    >
+    <section className="main">
       <div>
         <h2>
           {time.substring(0, 2) < 6 || time.substring(0, 2) >= 18 ? (
@@ -65,7 +51,9 @@ function Main({ location }) {
             : ""}
           , It`s currently
         </h2>
-        <h1>{time}</h1>
+        <h1>
+          {time} <span>{timezone.abbreviation}</span>
+        </h1>
         <h3>In {location}</h3>
       </div>
       <button
