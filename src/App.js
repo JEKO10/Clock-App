@@ -38,7 +38,7 @@ function App() {
     fetchTimezone();
     setInterval(() => {
       const date = new Date();
-      setTime(date.toLocaleTimeString().replace(/(.*)\D\d+/, "$1"));
+      setTime(date.toLocaleTimeString("en-GB").replace(/(.*)\D\d+/, "$1"));
     }, 1000);
   }, [location]);
 
@@ -46,9 +46,9 @@ function App() {
     <>
       <header
         className={
-          time.substring(0, 2) < 6 || time.substring(0, 2) >= 18
-            ? "night"
-            : "day"
+          time.substring(0, 2) > 6 && time.substring(0, 2) < 18
+            ? "day"
+            : "night"
         }
       >
         <Quotes />
