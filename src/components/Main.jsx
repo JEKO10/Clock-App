@@ -51,9 +51,7 @@ function Main({ timezone, location, time }) {
             : ""}
           , It`s currently
         </h2>
-        <h1>
-          {time} <span>{timezone.abbreviation}</span>
-        </h1>
+        <h1>{time}</h1>
         <h3>In {location}</h3>
       </div>
       <button

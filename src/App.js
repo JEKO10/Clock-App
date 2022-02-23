@@ -9,20 +9,28 @@ function App() {
   const [time, setTime] = useState("");
 
   const fetchLocation = async () => {
-    const response = await fetch(
-      "https://api.freegeoip.app/json/?apikey=53323ee0-9275-11ec-b15e-6d27cf6ad4a4"
-    );
-    const data = await response.json();
-    setLocation(data.time_zone);
+    try {
+      const response = await fetch(
+        "https://api.freegeoip.app/json/?apikey=53323ee0-9275-11ec-b15e-6d27cf6ad4a4"
+      );
+      const data = await response.json();
+      setLocation(data.time_zone);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const fetchTimezone = async () => {
-    const response = await fetch(
-      `https://worldtimeapi.org/api/timezone/${location}`
-    );
-    const data = await response.json();
-    setTimezone(data);
-    console.log(data);
+    try {
+      const response = await fetch(
+        `https://worldtimeapi.org/api/timezone/${location}`
+      );
+      const data = await response.json();
+      setTimezone(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {

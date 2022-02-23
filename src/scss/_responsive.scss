@@ -1,0 +1,150 @@
+@include mediaLarge {
+  .main {
+    > div {
+      h1 {
+        font-size: 9rem;
+      }
+    }
+  }
+}
+
+@include mediaMediumLarge {
+  .main {
+    > div {
+      h1 {
+        font-size: 7rem;
+      }
+    }
+  }
+
+  .moreInfo {
+    > div {
+      column-gap: 5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include mediaMedium {
+  .main {
+    > div {
+      h1 {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    button {
+      font-size: 1rem;
+    }
+  }
+
+  .moreInfo {
+    > div {
+      column-gap: 1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@include mediaMediumLow {
+  header {
+    padding: 50px 26px 30px;
+  }
+
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    > div {
+      h1 {
+        font-size: 6rem;
+      }
+    }
+
+    button {
+      margin: 1.5rem 0;
+      padding: 5px 0 5px 10px;
+    }
+  }
+
+  .moreInfo {
+    padding: 20px 30px 30px;
+
+    > div {
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+      text-align: center;
+      row-gap: 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+
+@include mediaSmall {
+  header {
+    padding: 30px;
+  }
+
+  .quotes {
+    > div {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+
+      p {
+        font-size: 1rem;
+        line-height: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      button {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .main {
+    > div {
+      h1 {
+        font-size: 4rem;
+        margin: 1rem 0;
+      }
+
+      h2 {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .moreInfo {
+    > div {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
