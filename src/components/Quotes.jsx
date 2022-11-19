@@ -10,7 +10,6 @@ function Quotes() {
     const data = await response.json();
     setQuote(data);
     setIsLoading(false);
-    console.log(quote);
   };
 
   useEffect(() => {

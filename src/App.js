@@ -11,10 +11,11 @@ function App() {
   const fetchLocation = async () => {
     try {
       const response = await fetch(
-        "https://api.freegeoip.app/json/?apikey=53323ee0-9275-11ec-b15e-6d27cf6ad4a4"
+        "https://api.ipbase.com/v1/json/?apikey=53323ee0-9275-11ec-b15e-6d27cf6ad4a4"
       );
       const data = await response.json();
       setLocation(data.time_zone);
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -27,7 +28,6 @@ function App() {
       );
       const data = await response.json();
       setTimezone(data);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -52,7 +52,7 @@ function App() {
         }
       >
         <Quotes />
-        <Main location={location} time={time} timezone={timezone} />
+        <Main location={location} time={time} />
       </header>
       <MoreInfo timezone={timezone} />
     </>

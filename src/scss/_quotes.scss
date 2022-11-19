@@ -1,5 +1,6 @@
 .quotes {
   @include maxWidth;
+  min-height: 250px;
 
   > div {
     @include flex(flex-start, flex-start);
